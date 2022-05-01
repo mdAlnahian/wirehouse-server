@@ -23,6 +23,7 @@ async function run(){
         await client.connect();
         const itemCollection = client.db('appleGadget').collection('item')
 
+        
         //read item
         app.get('/item', async (req,res)=>{
             const query ={};
@@ -30,6 +31,7 @@ async function run(){
             const items = await cursor.toArray();
             res.send(items)
         })
+
         //get item by using dynamic route
         app.get('/item/:id',async(req,res)=>{
             const id = req.params.id;
@@ -37,6 +39,7 @@ async function run(){
             const item = await itemCollection.findOne(query);
             res.send(item); 
         })
+
 
         //create an item
         app.post('/item',async(req,res)=>{
