@@ -40,8 +40,6 @@ async function run(){
             res.send(item); 
         })
 
-
-        
         //create an item
         app.post('/item',async(req,res)=>{
             const newItem = req.body;
