@@ -31,7 +31,6 @@ async function run(){
             res.send(items)
         })
 
-
         //get item by using dynamic route
         app.get('/item/:id',async(req,res)=>{
             const id = req.params.id;
@@ -56,6 +55,7 @@ async function run(){
         });
 
     }
+
     finally{
 
     }
